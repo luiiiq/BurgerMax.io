@@ -1,0 +1,43 @@
+[
+    {
+        "id": "cheddar",
+        "nome": "Double Cheddar Burger",
+        "preco": "15,00",
+        "img": "../img/double-cheddar.jpg"
+    }, {
+        "id": "bacon",
+        "nome": "Bacon - X",
+        "preco": "17,90",
+        "img": "../img/bacon.jpg"
+    }, {
+        "id": "combo",
+        "nome": "Combo Fritas & Chicken",
+        "preco": "25,90",
+        "img": "../img/combo.jpg"
+    }, {
+        "id": "completo",
+        "nome": "Burger Dish Completo",
+        "preco": "45,00",
+        "img": "../img/Burger Dish Completo.jpg"
+    }, {
+        "id": "layer",
+        "nome": "Double Layer X- Tudo",
+        "preco": "39,90",
+        "img": "../img/double layer.jpg"
+    }, {
+        "id": "chicken",
+        "nome": "Chicken Burger",
+        "preco": "17,90",
+        "img": "../img/chicken.jpg"
+    }, {
+        "id": "fritas",
+        "nome": "Fritas",
+        "preco": "5,90",
+        "img": "../img/fritas.png"
+    }, {
+        "id": "suco",
+        "nome": "Suco de Laranja",
+        "preco": "4,90",
+        "img": "../img/suco.png"
+    }
+]

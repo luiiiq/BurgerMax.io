@@ -1,0 +1,35 @@
+.termos-flex {
+    padding: 1.5rem 2.3rem;
+    font-family: 'Nunito', monospace;
+    background: #FEFDFF;
+}
+
+.termos {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 2rem;
+}
+
+.termos h2 {
+    color: #120D0C;
+    font-size: 27px;
+    line-height: 1.2;
+}
+
+.termos p {
+    color: #403C3B;
+    font-size: 18px;
+    line-height: 1.3;
+    max-width: 1200px;
+}
+
+@media(max-width:458px) {
+    .termos h2 {
+        font-size: 23px;
+    }
+
+    .termos p {
+        font-size: 17px;
+        line-height: 1.25;
+    }
+}

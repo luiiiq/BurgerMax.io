@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BurgerMax</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+      document.documentElement.className += " js";
+    </script>
+</head>
+<body>
+    <header>
+        <div class="marca">
+            <a href="../index.html"><img src="../img/marca.svg" alt="Marca do Site"></a>
+        </div>
+        <nav class="menu">
+            <button data-menu="button" aria-expanded="false" aria-controls="menu">MENU</button>
+            <ul data-menu="lista" id="menu">
+                <li><a href="../index.html">HOME</a></li>
+                <li><a href="./cardapio.html">CARDÁPIO</a></li>
+                <li><a href="../index.html#equipe">EQUIPE</a></li>
+                <li><a href="../index.html#contato">CONTATO</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="titulo-carrinho" aria-label="Titulo Carrinho">
+        <div class="voltar-carrinho">
+            <a href="./cardapio.html"><img src="../img/seta-voltar.svg" alt="Seta Voltar"></a>
+            <h1 class="h1-titulo">Meu Carrinho</h1>
+        </div>
+    </section>
+
+    <section aria-label="carrinho" id="js-pedido">
+        
+    </section>
+    <footer aria-label="Footer" class="rodape-none">
+        <a href="../index.html"><div class="marca"><img src="../img/marca.svg" alt="Marca"></div></a>
+        <p class="p-regular-small">Alguns Direitos reservados</p>
+    </footer>
+    <script src="../dist/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BurgerMax</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <script>
+      document.documentElement.className += " js";
+    </script>
+</head>
+<body>
+    <aside class="top-menu">
+        <p class="p-semibold-small">Venha conhecer nosso espaço: Vila, Avenida Paulista </p>
+        <div class="icon-deletar"><img src="./img/fechar-top-menu.svg" alt="Fechar informção sobre a loja"></div>
+    </aside>
+    <header>
+        <div class="marca">
+            <a href="./index.html"><img src="./img/marca.svg" alt="Marca do Site"></a>
+        </div>
+        <nav class="menu">
+            <button data-menu="button" aria-expanded="false" aria-controls="menu">MENU</button>
+            <ul data-menu="lista" id="menu">
+                <li><a href="./index.html">HOME</a></li>
+                <li><a href="./pag-extras/cardapio.html">CARDÁPIO</a></li>
+                <li><a href="#equipe">EQUIPE</a></li>
+                <li><a href="#contato">CONTATO</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section aria-label="Introdução à hamburgueria" class="introducao">
+            <div class="img-hamburguer">
+                <img src="./img/hamburguer-intro.png" alt="Hamburguer da introdução">
+            </div>
+            <div>
+                <h1 class="h1-titulo">Experimente os Melhores Hambúrgueres e Divirta-se Conosco</h1>
+                <div class="listas-intro">
+                    <ul class="intro-lista">
+                        <li><img src="./img/icone-carne.svg" alt="Carne de Qualidade"></li>
+                        <li><p class="p-regular-small">Carne da Melhor Qualidade</p></li>
+                    </ul>
+
+                    <ul class="intro-lista">
+                        <li><img src="./img/icone-atendimento.svg" alt="Atendimento"></li>
+                        <li><p class="p-regular-small">Atendimento excelente</p></li>
+                    </ul>
+
+                    <ul class="intro-lista">
+                        <li><img src="./img/icone-chef.svg" alt="Chefs da loja"></li>
+                        <li><p class="p-regular-small">Os Melhores Chefs</p></li>
+                    </ul>
+                </div>
+                <div class="btn"><a href="./pag-extras/cardapio.html">VER CARDÁPIO <span>➔</span></a></div>
+            </div>
+            <div class="animacao-container">
+                <span class="bola bola-1"></span>
+                <span class="bola bola-2"></span>
+            </div>
+        </section>
+
+        <section aria-label="Qualidades dos nossos lanches" class="qualidades">
+            <div class="qualidades-container">
+                <div class="slide-wrapper">
+                    <div class="slide">
+                        <div class="item-carrossel">
+                            <img src="./img/img-pão.jpg" alt="Imagem Pão">
+                            <div class="info-blur pao-blur"></div>
+                            <div class="info-carrossel">
+                                <h2>Pão de Qualidade</h2>
+                                <p>Sabor agradável com textura macia e ingredientes artesanais</p>
+                            </div>
+                        </div>
+
+                        <div class="item-carrossel">
+                            <img src="./img/img-molho.jpg" alt="Imagem Molho">
+                            <div class="info-blur molho-blur"></div>
+                            <div class="info-carrossel">
+                                <h2>Melhores Molhos</h2>
+                                <p>Molho que realça o sabor da carne e complementa o tempero</p>
+                            </div>
+                        </div>
+
+                        <div class="item-carrossel">
+                            <img src="./img/img-carne.jpg" alt="Imagem Carne">
+                            <div class="info-blur carne-blur"></div>
+                            <div class="info-carrossel">
+                                <h2>Carne com Sabor</h2>
+                                <p>Carne suculenta, crocante e natural</p>
+                            </div>
+                        </div>
+
+                        <div class="item-carrossel">
+                            <img src="./img/img-fritas.jpg" alt="Imagem Fritas">
+                            <div class="info-blur fritas-blur"></div>
+                            <div class="info-carrossel">
+                                <h2>Fritas Crocantes</h2>
+                                <p>As fritas completam a experiência do lanche</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="controle-botoes">
+                        <button aria-label="Botão Voltar" id="btn-voltar"><p>←</p></button>
+                        <button aria-label="Botão Avançar" id="btn-avancar"><p>→</p></button>
+                    </div>
+                </div>
+
+                <div class="qualidades-info">
+                    <h1 class="h1-titulo">Você Pode Viver Essa Experiência no Conforto de Sua Casa</h1>
+                    <p class="p-medium-medium">Hambúrguer suculento, ingredientes fresquinhos e aquele sabor que conquista na primeira mordida!</p>
+                    <div class="qualidades-lista">
+                        <ul>
+                            <li><img src="./img/entrega.svg" alt="Icone Entrega"></li>
+                            <li class="p-regular-xs">ENTREGA RÁPIDA</li>
+                        </ul>
+
+                        <ul>
+                            <li><img src="./img/suporte.svg" alt="Icone Suporte"></li>
+                            <li class="p-regular-xs">SUPORTE PÓS-COMPRA</li>
+                        </ul>
+
+                        <ul>
+                            <li><img src="./img/calor.svg" alt="Icone Calor"></li>
+                            <li class="p-regular-xs">PEDIDO CHEGA QUENTE</li>
+                        </ul>
+                    </div>
+                    <div class="btn-compras"><a href="./pag-extras/cardapio.html">COMPRAR ONLINE</a></div>
+                </div>
+            </div>
+        </section>
+
+        <section aria-label="Equipe da Hamburgueria" id="equipe" class="equipe">
+            <h1 class="h1-titulo">Conheça nossa Equipe</h1>
+            <div class="equipe-container">
+                <div class="equipe-item">
+                    <img src="./img/img-daniel.jpg" alt="Imagem Daniel">
+                    <div class="info-cargo churrasco">
+                        <h3>Churrasqueiro /</h3>
+                        <p>Daniel Tailon</p>
+                    </div>
+                </div>
+
+                <div class="equipe-item">
+                    <img src="./img/img-sarah.jpg" alt="Imagem Sarah">
+                    <div class="info-cargo fritar">
+                        <h3>Fritadora /</h3>
+                        <p>Sarah Nila</p>
+                    </div>
+                </div>
+
+                <div class="equipe-item">
+                    <img src="./img/img-gabriel.jpg" alt="Imagem Gabriel">
+                    <div class="info-cargo montar">
+                        <h3>Montador /</h3>
+                        <p>Gabriel Silva</p>
+                    </div>
+                </div>
+
+                <div class="equipe-item">
+                    <img src="./img/img-pedro.jpg" alt="Imagem Pedro">
+                    <div class="info-cargo montar">
+                        <h3>Montador /</h3>
+                        <p>Pedro Lima</p>
+                    </div>
+                </div>
+
+                <div class="equipe-item">
+                    <img src="./img/img-laura.jpg" alt="Imagem Laura">
+                    <div class="info-cargo churrasco">
+                        <h3>Churrasqueira /</h3>
+                        <p>Laura Ferreira</p>
+                    </div>
+                </div>
+
+                <div class="equipe-item">
+                    <img src="./img/img-paulo.jpg" alt="Imagem Paulo">
+                    <div class="info-cargo fritar">
+                        <h3>Fritador /</h3>
+                        <p>Paulo Mendes</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq">
+            <h1 class="h1-titulo">Perguntas Frequentes</h1>
+            <dl>
+                <div class="pergunta">
+                    <div class="pergunta-blur"></div>
+                    <dt>Vocês fazem entrega?</dt>
+                    <dd>Sim, fazemos entrega para a região. É só fazer o pedido que preparamos tudo com cuidado e enviamos até você pelo nosso delivery</dd>
+                </div>
+                
+                <div class="pergunta">
+                    <div class="pergunta-blur"></div>
+                    <dt>Quais as formas de pagamento?</dt>
+                    <dd>Só aceitamos Cartão de Crédito</dd>
+                </div>
+
+                <div class="pergunta">
+                    <div class="pergunta-blur"></div>
+                    <dt>Quais os preços dos hambúrgueres?</dt>
+                    <dd>Temos hambúrgueres com preços bem acessíveis, variando de R$15,00 à R$45,00, com opções para todos os gostos. Você pode conferir no nosso <span><a href="./pag-extras/cardapio.html">Cardápio</a></span></dd>
+                </div>
+                
+                <div class="pergunta">
+                    <div class="pergunta-blur"></div>
+                    <dt>Como funciona o suporte?</dt>
+                    <dd>Nosso suporte funciona pelo WhatsApp e Email. Você pode entrar em contato de Segunda à Sexta, das 08:00 até 18:00. Nossa equipe responde o mais rápido possível</dd>
+                    <div class="suporte-contato">
+                        <ul>
+                            <li><img src="./img/whatsapp.svg" alt="Icone WhatsApp"></li>
+                            <li>+99 99999-9999</li>
+                        </ul>
+
+                        <ul>
+                            <li><img src="./img/email.svg" alt="Icone Email"></li>
+                            <li>burger@gmail.com</li>
+                        </ul>
+                    </div>
+                </div>
+            </dl>
+            <div class="faq-icones">
+                <div class="faq-prato">
+                    <img src="./img/prato.svg" alt="Icone Prato">
+                </div>
+                <div class="faq-chef">
+                    <img src="./img/chef.svg" alt="Icone Chef">
+                </div>
+                <div class="faq-fast-food">
+                    <img src="./img/fast-food.svg" alt="Icone Fast-Food">
+                </div>
+                <div class="faq-burger">
+                    <img src="./img/burger.svg" alt="Icone Burger">
+                </div>
+            </div>
+        </section>
+
+        <section aria-label="Contato" class="contato" id="contato">
+            <h1 class="h1-titulo">Contato</h1>
+            <div class="contato-container">
+                <form action="">
+                    <label for="nome">Nome</label>
+                    <input type="text" for="nome" id="nome" name="nome" required>
+
+                    <label for="email">Email</label>
+                    <input type="text" for="email" id="email" name="email" required>
+
+                    <label for="msg">Mensagem</label>
+                    <textarea name="msg" id="msg" for="msg" name="msg" placeholder="Digite sua Mensagem" required></textarea>
+
+                    <button type="submit">ENVIAR</button>
+                </form>
+                
+                <div class="contato-info">
+                    <address>
+                        <ul class="lista-contato">
+                            <li>
+                                <h3>Endereço</h3>
+                                <p class="p-regular-small">Vila, Avenida Paulista</p>
+                                <p class="p-regular-small">São Paulo, SP</p>
+                            </li>
+
+                            <li>
+                                <h3>Email</h3>
+                                <p class="p-regular-small">burgermax@gmail.com</p>
+                            </li>
+
+                            <li class="js-horario">
+                                <h3>Horário</h3>
+                                <p class="p-regular-small" data-semana="1,2,3,4,5" data-horario="8-18">Segunda à Sexta, das 8:00 até às 18:00</p>
+                            </li>
+                        </ul>
+                    </address>
+                    
+                    <div class="redes">
+                        <h2>Redes</h2>
+                        <div class="redes-itens">
+                            <a href="./index.html">
+                                <div class="bg-rede facebook">
+                                    <img src="./img/facebook.svg" alt="Facebook">
+                                    <p>Facebook</p>
+                                </div>
+                            </a>
+                            <a href="./index.html">
+                                <div class="bg-rede instagram">
+                                    <img src="./img/instagram.svg" alt="Instagram">
+                                    <p>Instagram</p>
+                                </div>
+                            </a>
+                            <a href="./index.html">
+                                <div class="bg-rede youtube">
+                                    <img src="./img/youtube.svg" alt="Youtube">
+                                    <p>Youtube</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer aria-label="Footer">
+        <a href="./index.html"><div class="marca"><img src="./img/marca.svg" alt="Marca"></div></a>
+        <p class="p-regular-small">Alguns Direitos reservados</p>
+    </footer>
+    <script src="./dist/main.js"></script>
+</body>
+</html>

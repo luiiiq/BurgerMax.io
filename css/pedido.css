@@ -1,0 +1,363 @@
+.titulo-carrinho, .titulo-pagamento, .titulo-politica {
+    background: #FEFDFF;
+    padding: 1.5rem 2.3rem;
+}
+
+.voltar-carrinho, .voltar-pagamento, .voltar-politica {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.voltar-carrinho img, .voltar-pagamento img, .titulo-politica img {
+    width: 20px;
+    cursor: pointer;
+}
+
+.carrinho-grid {
+    padding: 1.5rem 2.3rem;
+    display: grid;
+    grid-template-columns: minmax(500px, 600px) 400px;
+    grid-template-rows: 250px 300px;
+    gap: 30px;
+    align-items: center;
+    background: #FEFDFF !important;
+    justify-content: space-between;
+}
+
+@media(max-width: 990px) {
+    .carrinho-grid {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .carrinho-grid .resumo-carrinho-cheio {
+        flex: 1 1 400px !important;
+    }
+
+    .total-compra {
+        width: 100%;
+    }
+
+    .resumo-flex h5 {
+        font-size: 10px !important;
+    }
+}
+
+@media(max-width: 487px) {
+    .resumo-flex h5 {
+        font-size: 8px !important;
+    }
+
+    .lanche {
+        min-width: 130px;
+    }
+
+    .resumo-flex {
+        flex-wrap: wrap;
+        justify-content: center !important;
+        align-items: center;
+    }
+
+    .carrinho-grid .resumo-carrinho-cheio {
+        flex: 1 1 350px !important;
+    }
+}
+
+@media(max-width: 398px) {
+    .lanche {
+        max-width: 150px;
+    }
+}
+
+
+@media(max-width:404px) {
+    .total-compra p {
+        font-size: 1.1rem !important;
+        line-height: 1 !important;
+    }
+
+    .total-compra span {
+        font-size: 1.1rem !important;
+        line-height: 1 !important; 
+        font-weight: 500;
+        color: #120D0C;
+    }
+}
+
+@media(max-width: 372px) {
+     .taxa p {
+        width: 150px !important;
+    }
+
+    .taxa::after{
+        top: 35px !important;
+    }
+    .total-compra {
+        padding: 1rem !important;
+    }
+}
+
+.resumo-flex {
+    display: flex;
+    gap: 20px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+    padding: 0.8rem 1rem;
+    border-radius: 20px;
+    position: relative;
+}
+
+.resumo-carrinho-cheio {
+    grid-column: 1;
+}
+
+.lanche img{
+    width: 240px;
+}
+
+.resumo-flex p {
+    font-family: 'Nunito', monospace;
+    font-weight: 500;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    margin-bottom: 5px;
+    line-height: 1;
+    color: #302A29;
+}
+
+.resumo-flex span {
+    font-family: 'Nunito', monospace;
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1;
+    color: #120D0C;
+    margin-bottom: 5px;
+}
+
+.resumo-flex h5 {
+    font-family: 'Nunito', monospace;
+    color: #BB0000;
+    font-size: 12px;
+    cursor: pointer;
+    margin-top: auto;
+    margin-left: auto;
+    position: relative;
+}
+
+.resumo-flex h3, .resumo-flex  h3 span{
+    font-family: 'Nunito', monospace;
+    text-align: center;
+    letter-spacing: 1px;
+    background: #120D0C;
+    color: #FEFDFF;
+}
+
+.resumo-flex h3 {
+    margin-top: 1rem;
+    display: block;
+    justify-self: start;
+    padding: 8px 10px;
+    border-radius: 10px;
+}
+
+.resumo-flex h3 span {
+    font-size: 18px;
+}
+
+.resumo-flex h5::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    background: #BB0000;
+    transition: 0.4s ease;
+}
+
+.resumo-flex h5:hover::before {
+    width: 100%;
+}
+
+.contador-resumo {
+    display: flex;
+    border: 1px solid #120D0C;
+    border-radius: 10px;
+    align-items: center;
+    justify-self: start;
+    padding: 5px 4px 5px 10px;
+    margin-top: 1rem;
+}
+
+.contador-resumo .contador {
+    padding: 2px 10px;
+    margin-right: 1rem;
+}
+
+.resumo-carrinho-vazio {
+    background: #EEEEEE;
+    grid-row: 1;
+    padding: 1rem 2rem;
+    display: grid;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.resumo-carrinho-vazio img {
+    width: 130px;
+    justify-self: center;
+    margin-bottom: 2px;
+}
+
+.resumo-carrinho-vazio p {
+    font-family: 'Nunito', monospace;
+    color: #302A29;
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 1;
+    margin-bottom: 1rem;
+}
+
+.resumo-carrinho-vazio a {
+    text-align: center;
+    color: #FEFDFF;
+    font-family: 'Nunito', monospace;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    line-height: 1;
+    display: block;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+    background: #BB0000;
+    transition: 0.2s ease;
+}
+
+.resumo-carrinho-vazio a:hover {
+    background: #DE2E00;
+}
+
+@media(max-width: 565px) {
+    .resumo-carrinho-vazio {
+        width: 320px;
+    }
+}
+
+@media(max-width: 448px) {
+    .resumo-carrinho-vazio {
+        width: 280px;
+    }
+}
+
+@media(max-width: 405px) {
+    .resumo-carrinho-vazio {
+        width: 230px;
+    }
+    .resumo-carrinho-vazio img {
+        width: 100px;
+    }
+
+    .resumo-carrinho-vazio p {
+        font-size: 1.1rem;
+    }
+}
+
+@media(max-width: 350px) {
+    .resumo-carrinho-vazio {
+        width: 200px;
+    }
+    .resumo-carrinho-vazio img {
+        width: 90px;
+    }
+
+    .resumo-carrinho-vazio p {
+        font-size: 1rem;
+    }
+    .resumo-carrinho-vazio a {
+        font-size: 1.01rem;
+    }
+}
+
+.total-compra {
+    grid-column: 2;
+    grid-row: 1;
+    border: 2px solid transparent;
+    background: 
+    linear-gradient(#FEFDFF, #FEFDFF) padding-box,
+    linear-gradient(#F5D52C, #DE2E00) border-box;
+    border-radius: 10px;
+    padding: 1rem 2rem;
+}
+
+.total-compra p {
+    font-family: 'Nunito', monospace;
+    font-size: 1.3rem;
+    line-height: 1.1;
+    font-weight: 500;
+    color: #403C3B;
+}
+
+.total-compra h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.total-compra span {
+    font-family: 'Nunito', monospace;
+    font-size: 1.2rem;
+    line-height: 1.1;
+    font-weight: 500;
+    color: #120D0C;
+}
+
+.compra-grid div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 1.5rem;
+}
+
+.itens, .subtotal, .taxa, .total {
+    position: relative;
+}
+
+.itens::after, .subtotal::after, .taxa::after, .total::after {
+   position: absolute;
+   display: block;
+   content: "";
+   width: 100%;
+   height: 2px;
+   top: 30px;
+   background: linear-gradient(#F5D52C, #DE2E00);
+}
+
+.btn-pagamento {
+    font-family: 'Nunito', monospace;
+    font-weight: bold;
+    font-size: 1.3rem;
+    line-height: 1;
+    background: #BB0000;
+    border-radius: 10px;
+    justify-self: stretch;
+    padding: 0px !important;
+}
+
+.total-compra a {
+    color: #FEFDFF;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+}
+
+@media(max-width: 890px) {
+ .rodape-none {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+ }
+} 
+
+@media(max-width: 1300px) {
+ .rodape-none {
+    display: none;
+ }
+} 
