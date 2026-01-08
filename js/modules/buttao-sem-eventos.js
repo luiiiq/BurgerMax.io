@@ -1,26 +1,38 @@
-export default function eliminarBotaoEventos(botaoMsg, inputsMsg, textarea) {
-  const botaoEnviarMsg = document.querySelector(botaoMsg);
-  const listaInputsMsg = document.querySelectorAll(inputsMsg);
-  const textareaElemento = document.querySelector(textarea);
+export default class EliminarBotaoEventos {
+  constructor(botaoMsg, inputsMsg, textarea) {
+    this.botaoEnviarMsg = document.querySelector(botaoMsg);
+    this.listaInputsMsg = document.querySelectorAll(inputsMsg);
+    this.textareaElemento = document.querySelector(textarea);
 
-  if (botaoEnviarMsg && listaInputsMsg.length && textareaElemento) {
-    function desativarPadrao(event) {
-      const msgLimpa = textareaElemento.value.trim();
-      let todosPreenchidos = true;
-      listaInputsMsg.forEach((input) => {
-        if (input.value.trim() === "") {
-          todosPreenchidos = false;
-        }
-      });
-      if (todosPreenchidos && msgLimpa !== "") {
-        event.preventDefault();
-        document.body.style.cursor = "wait";
-        setTimeout(() => {
-          window.alert("Sua mensagem foi enviada com sucesso!");
-          window.location.href = "./index.html";
-        }, 2000);
+    this.desativarPadrao = this.desativarPadrao.bind(this);
+  };
+
+  desativarPadrao(event) {
+    const msgLimpa = this.textareaElemento.value.trim();
+    let todosPreenchidos = true;
+    this.listaInputsMsg.forEach((input) => {
+      if (input.value.trim() === "") {
+        todosPreenchidos = false;
       }
-    }
-    botaoEnviarMsg.addEventListener("click", desativarPadrao);
-  }
-}
+    });
+    if (todosPreenchidos && msgLimpa !== "") {
+      event.preventDefault();
+      document.body.style.cursor = "wait";
+      setTimeout(() => {
+        window.alert("Sua mensagem foi enviada com sucesso!");
+        window.location.href = "./index.html";
+      }, 2000);
+    };
+  };
+
+  adicionarBotaoEvent() {
+    this.botaoEnviarMsg.addEventListener("click", this.desativarPadrao);
+  };
+
+  init() {
+    if (this.botaoEnviarMsg && this.listaInputsMsg.length && this.textareaElemento) {
+      this.adicionarBotaoEvent();
+    };
+    return this;
+  };
+};

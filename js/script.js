@@ -1,7 +1,7 @@
 import LocalLoja from "./modules/ativar-local-loja.js";
 import ScrollLinkSuave from "./modules/scroll-link-suave.js";
 import AccordionList from "./modules/faq.js";
-import eliminarBotaoEventos from "./modules/buttao-sem-eventos.js";
+import EliminarBotaoEventos from "./modules/buttao-sem-eventos.js";
 import animaScroll from "./modules/scroll-sections.js";
 import dataFuncionamento from "./modules/data.js";
 import slide from "./modules/carrossel.js";
@@ -21,11 +21,9 @@ scrollLinkSuave.init();
 const accordion = new AccordionList(".faq dl .pergunta");
 accordion.init();
 
-eliminarBotaoEventos(
-  ".contato-container form button",
-  ".contato-container form input",
-  ".contato-container form textarea",
-);
+const botaoContato = new EliminarBotaoEventos( ".contato-container form button", ".contato-container form input",".contato-container form textarea");
+botaoContato.init();
+
 animaScroll("main section");
 dataFuncionamento(".js-horario p");
 slide(".slide", ".slide-wrapper", "#btn-voltar", "#btn-avancar");
