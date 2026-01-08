@@ -1,28 +1,24 @@
 export default class AnimaScroll {
   constructor(sections) {
     this.sectionsLista = document.querySelectorAll(sections);
-    this.animaSecao = this.animaSecao.bind(this);
+    this.windowMetade = window.innerHeight * 0.6;
+    this.scrollAtivado = this.scrollAtivado.bind(this);
   };
 
-  animaSecao() {
+  scrollAtivado() {
     this.sectionsLista.forEach((section) => {
-      const windowMetade = window.innerHeight * 0.6;
       const sectionTopo = section.getBoundingClientRect().top;
-      const sectionVisivel = sectionTopo - windowMetade;
-      if (sectionVisivel < 0) {
-        section.classList.add("ativar-scroll");
+      const visivel = (sectionTopo - this.windowMetade) < 0;
+      if (visivel) {
+        section.classList.add('ativar-scroll');
       };
     });
   };
 
-  adicionarScrollEvent() {
-    window.addEventListener("scroll", this.animaSecao);
-  };
-
   init() {
     if (this.sectionsLista.length) {
-      this.animaSecao();
-      this.adicionarScrollEvent();
+      this.scrollAtivado();
+      window.addEventListener('scroll', this.scrollAtivado);
     };
     return this;
   };

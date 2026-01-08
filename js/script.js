@@ -24,7 +24,7 @@ accordion.init();
 const botaoContato = new EliminarBotaoEventos( ".contato-container form button", ".contato-container form input",".contato-container form textarea");
 botaoContato.init();
 
-const animacaoScroll = new AnimaScroll("main section");
+const animacaoScroll = new AnimaScroll('[data-scroll="suave"]');
 animacaoScroll.init();
 
 dataFuncionamento(".js-horario p");
