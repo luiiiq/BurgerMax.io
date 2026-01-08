@@ -1,5 +1,5 @@
+import ScrollLinkSuave from "./modules/scroll-link-suave.js";
 import localLoja from "./modules/ativar-local-loja.js";
-import scrollLinkSuave from "./modules/scroll-link-suave.js";
 import accordionList from "./modules/faq.js";
 import eliminarBotaoEventos from "./modules/buttao-sem-eventos.js";
 import animaScroll from "./modules/scroll-sections.js";
@@ -12,8 +12,10 @@ import regexp_Pagamento from "./modules/regexp-pagamento.js";
 import buttonFinalizarCompra from "./modules/button-pagamento.js";
 import menuMobile from "./modules/menu-mobile.js";
 
+const scrollLinkSuave = new ScrollLinkSuave('.menu ul a[href^="#"]');
+scrollLinkSuave.init();
+
 localLoja("aside", ".icon-deletar");
-scrollLinkSuave('.menu ul a[href^="#"]');
 accordionList(".faq dl .pergunta");
 eliminarBotaoEventos(
   ".contato-container form button",
