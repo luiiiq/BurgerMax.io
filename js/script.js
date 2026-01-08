@@ -2,7 +2,7 @@ import LocalLoja from "./modules/ativar-local-loja.js";
 import ScrollLinkSuave from "./modules/scroll-link-suave.js";
 import AccordionList from "./modules/faq.js";
 import EliminarBotaoEventos from "./modules/buttao-sem-eventos.js";
-import animaScroll from "./modules/scroll-sections.js";
+import AnimaScroll from "./modules/scroll-sections.js";
 import dataFuncionamento from "./modules/data.js";
 import slide from "./modules/carrossel.js";
 import cardapio from "./modules/cardapio.js";
@@ -24,7 +24,9 @@ accordion.init();
 const botaoContato = new EliminarBotaoEventos( ".contato-container form button", ".contato-container form input",".contato-container form textarea");
 botaoContato.init();
 
-animaScroll("main section");
+const animacaoScroll = new AnimaScroll('[data-scroll="suave"]');
+animacaoScroll.init();
+
 dataFuncionamento(".js-horario p");
 slide(".slide", ".slide-wrapper", "#btn-voltar", "#btn-avancar");
 cardapio(".js-cardapio", ".menos", ".mais");

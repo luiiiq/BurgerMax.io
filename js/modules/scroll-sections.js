@@ -1,19 +1,25 @@
-export default function animaScroll(sections) {
-  const sectionsLista = document.querySelectorAll(sections);
+export default class AnimaScroll {
+  constructor(sections) {
+    this.sectionsLista = document.querySelectorAll(sections);
+    this.windowMetade = window.innerHeight * 0.6;
+    this.scrollAtivado = this.scrollAtivado.bind(this);
+  };
 
-  if (sectionsLista.length) {
-    function animaSecao() {
-      sectionsLista.forEach((section) => {
-        const windowMetade = window.innerHeight * 0.6;
-        const sectionTopo = section.getBoundingClientRect().top;
-        const sectionVisivel = sectionTopo - windowMetade;
-        if (sectionVisivel < 0) {
-          section.classList.add("ativar-scroll");
-        }
-      });
-    }
-    animaSecao();
+  scrollAtivado() {
+    this.sectionsLista.forEach((section) => {
+      const sectionTopo = section.getBoundingClientRect().top;
+      const visivel = (sectionTopo - this.windowMetade) < 0;
+      if (visivel) {
+        section.classList.add('ativar-scroll');
+      };
+    });
+  };
 
-    window.addEventListener("scroll", animaSecao);
-  }
-}
+  init() {
+    if (this.sectionsLista.length) {
+      this.scrollAtivado();
+      window.addEventListener('scroll', this.scrollAtivado);
+    };
+    return this;
+  };
+};
