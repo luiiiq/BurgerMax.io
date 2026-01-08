@@ -1,6 +1,6 @@
 import ScrollLinkSuave from "./modules/scroll-link-suave.js";
+import AccordionList from "./modules/faq.js";
 import localLoja from "./modules/ativar-local-loja.js";
-import accordionList from "./modules/faq.js";
 import eliminarBotaoEventos from "./modules/buttao-sem-eventos.js";
 import animaScroll from "./modules/scroll-sections.js";
 import dataFuncionamento from "./modules/data.js";
@@ -15,14 +15,16 @@ import menuMobile from "./modules/menu-mobile.js";
 const scrollLinkSuave = new ScrollLinkSuave('.menu ul a[href^="#"]');
 scrollLinkSuave.init();
 
-localLoja("aside", ".icon-deletar");
-accordionList(".faq dl .pergunta");
+const accordion = new AccordionList(".faq dl .pergunta");
+accordion.init();
+
 eliminarBotaoEventos(
   ".contato-container form button",
   ".contato-container form input",
   ".contato-container form textarea",
 );
 animaScroll("main section");
+localLoja("aside", ".icon-deletar");
 dataFuncionamento(".js-horario p");
 slide(".slide", ".slide-wrapper", "#btn-voltar", "#btn-avancar");
 cardapio(".js-cardapio", ".menos", ".mais");
