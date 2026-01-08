@@ -1,13 +1,24 @@
-export default function accordionList(perguntas) {
-  const perguntaLista = document.querySelectorAll(perguntas);
+export default class AccordionList {
+  constructor(perguntas) {
+    this.perguntaLista = document.querySelectorAll(perguntas);
+  };
 
-  if (perguntaLista.length) {
-    function abilitarPergunta() {
-      this.classList.toggle("ativo");
-    }
+  abilitarPergunta(pergunta) {
+    pergunta.classList.toggle("ativo");
+  };
 
-    perguntaLista.forEach((pergunta) => {
-      pergunta.addEventListener("click", abilitarPergunta);
+  adicionarFaqEvent() {
+    this.perguntaLista.forEach((pergunta) => {
+      pergunta.addEventListener("click", () => {
+        this.abilitarPergunta(pergunta);
+      });
     });
-  }
-}
+  };
+
+  init() {
+    if (this.perguntaLista.length) {
+      this.adicionarFaqEvent();
+    };
+    return this;
+  };
+};
