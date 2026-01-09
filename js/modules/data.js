@@ -1,34 +1,39 @@
-export default function dataFuncionamento(liFuncionamento) {
-  const liElemento = document.querySelector(liFuncionamento);
-  if (!liElemento) return;
-  const semanaAberta = liElemento.dataset.semana;
-  const horarioAberto = liElemento.dataset.horario;
+export default class DataFuncionamento {
+  constructor(liFuncionamento) {
+    this.liElemento = document.querySelector(liFuncionamento);
+    this.semanaAberta = this.liElemento.dataset.semana;
+    this.horarioAberto = this.liElemento.dataset.horario;
+  };
 
-  if (semanaAberta && horarioAberto) {
-    function horarioAgora() {
-      const agora = new Date();
-      const horario = agora.getHours();
-      return horario;
-    }
+  horarioAgora() {
+    this.agoraHoras = new Date();
+    this.horario = this.agoraHoras.getHours();
+    return this.horario;
+  };
 
-    function semanaAgora() {
-      const agora = new Date();
-      const semana = agora.getDay();
-      return semana;
-    }
+  semanaAgora() {
+    this.agoraSemana = new Date();
+    this.semana = this.agoraSemana.getDay();
+    return this.semana;
+  };
 
-    function dataCompleta() {
-      const limparHorario = horarioAberto.split("-").map(Number);
-      const limparSemana = semanaAberta.split(",").map(Number);
+  dataCompleta() {
+    const limparHorario = this.horarioAberto.split("-").map(Number);
+    const limparSemana = this.semanaAberta.split(",").map(Number);
 
-      if (
-        horarioAgora() >= limparHorario[0] &&
-        horarioAgora() <= limparHorario[limparHorario.length - 1] &&
-        limparSemana.includes(semanaAgora())
-      ) {
-        liElemento.classList.add("horario-aberto");
-      }
-    }
-    dataCompleta();
-  }
-}
+    if (
+      this.horarioAgora() >= limparHorario[0] &&
+      this.horarioAgora() <= limparHorario[limparHorario.length - 1] &&
+      limparSemana.includes(this.semanaAgora())
+    ) {
+      this.liElemento.classList.add("horario-aberto");
+    };
+  };
+
+  init() {
+    if (this.liElemento) {
+      this.dataCompleta();
+    };
+    return this;
+  };
+};
