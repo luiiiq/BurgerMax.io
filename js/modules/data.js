@@ -1,8 +1,6 @@
 export default class DataFuncionamento {
   constructor(liFuncionamento) {
     this.liElemento = document.querySelector(liFuncionamento);
-    this.semanaAberta = this.liElemento.dataset.semana;
-    this.horarioAberto = this.liElemento.dataset.horario;
   };
 
   horarioAgora() {
@@ -31,9 +29,10 @@ export default class DataFuncionamento {
   };
 
   init() {
-    if (this.liElemento) {
-      this.dataCompleta();
-    };
+    if (!this.liElemento) return;
+    this.semanaAberta = this.liElemento.dataset.semana;
+    this.horarioAberto = this.liElemento.dataset.horario;
+    this.dataCompleta();
     return this;
   };
 };

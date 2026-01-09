@@ -8,7 +8,7 @@ import slide from "./modules/carrossel.js";
 import cardapio from "./modules/cardapio.js";
 import carrinho from "./modules/carrinho.js";
 import pagamento from "./modules/pagamento.js";
-import regexp_Pagamento from "./modules/regexp-pagamento.js";
+import Regexp_Pagamento from "./modules/regexp-pagamento.js";
 import buttonFinalizarCompra from "./modules/button-pagamento.js";
 import menuMobile from "./modules/menu-mobile.js";
 
@@ -31,9 +31,15 @@ const funcionamento = new DataFuncionamento(".js-horario p");
 funcionamento.init();
 
 slide(".slide", ".slide-wrapper", "#btn-voltar", "#btn-avancar");
+
 cardapio(".js-cardapio", ".menos", ".mais");
+
 carrinho();
+
 pagamento();
-regexp_Pagamento();
+
+const regexpPagamento = new Regexp_Pagamento("#email", "#cpf", "#cep", "#nome, #sobrenome, #rua, #bairro, #cidade, #num, #complemento, #num-cartao, #codigo, #vencimento, #nome-cartao, #estado");
+regexpPagamento.init();
+
 buttonFinalizarCompra();
 menuMobile();
