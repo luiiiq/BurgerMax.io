@@ -10,7 +10,7 @@ import carrinho from "./modules/carrinho.js";
 import pagamento from "./modules/pagamento.js";
 import Regexp_Pagamento from "./modules/regexp-pagamento.js";
 import ButtonFinalizarCompra from "./modules/button-pagamento.js";
-import menuMobile from "./modules/menu-mobile.js";
+import MenuMobile from "./modules/menu-mobile.js";
 
 const localLoja = new LocalLoja("aside", ".icon-deletar");
 localLoja.init();
@@ -44,4 +44,5 @@ regexpPagamento.init();
 const botaoCompra = new ButtonFinalizarCompra(".formulario-pagar button", '.formulario-pagar input[type="text"], .formulario-pagar input[type="email"]', ".selecione-container input", '.formulario-pagar input[type="checkbox"]');
 botaoCompra.init();
 
-menuMobile();
+const menuMobile = new MenuMobile('[data-menu="button"]', "#menu", ["click", "touchstart"]);
+menuMobile.init();
