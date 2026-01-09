@@ -3,8 +3,7 @@ import ScrollLinkSuave from "./modules/scroll-link-suave.js";
 import AccordionList from "./modules/faq.js";
 import EliminarBotaoEventos from "./modules/buttao-sem-eventos.js";
 import AnimaScroll from "./modules/scroll-sections.js";
-import debounce from "./modules/debounce.js";
-import dataFuncionamento from "./modules/data.js";
+import DataFuncionamento from "./modules/data.js";
 import slide from "./modules/carrossel.js";
 import cardapio from "./modules/cardapio.js";
 import carrinho from "./modules/carrinho.js";
@@ -28,7 +27,9 @@ botaoContato.init();
 const animacaoScroll = new AnimaScroll('[data-scroll="suave"]');
 animacaoScroll.init();
 
-dataFuncionamento(".js-horario p");
+const funcionamento = new DataFuncionamento(".js-horario p");
+funcionamento.init();
+
 slide(".slide", ".slide-wrapper", "#btn-voltar", "#btn-avancar");
 cardapio(".js-cardapio", ".menos", ".mais");
 carrinho();
