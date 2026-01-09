@@ -1,55 +1,58 @@
-export default function buttonFinalizarCompra() {
-  const button = document.querySelector(".formulario-pagar button");
-  const inputs = document.querySelectorAll(
-    '.formulario-pagar input[type="text"], .formulario-pagar input[type="email"]',
-  );
-  const radio = document.querySelectorAll(".selecione-container input");
-  const checkbox = document.querySelector(
-    '.formulario-pagar input[type="checkbox"]',
-  );
+export default class ButtonFinalizarCompra {
+  constructor(buttonPagar, inputsLista, radioLista, checkboxPolitica) {
+    this.button = document.querySelector(buttonPagar);
+    this.inputs = document.querySelectorAll(inputsLista);
+    this.radio = document.querySelectorAll(radioLista);
+    this.checkbox = document.querySelector(checkboxPolitica);
 
-  let cesta = [];
-  try {
-    cesta = JSON.parse(localStorage.getItem("card-info")) || [];
-  } catch (e) {
-    cesta = [];
-  }
-  if (button && inputs.length && radio.length && checkbox) {
-    function alterarPadrao(event) {
-      const radioVerificar = radio[0].checked === true || radio[1].checked;
-      const checkboxVerificar = checkbox.checked;
+    this.alterarPadrao = this.alterarPadrao.bind(this);
+  };
 
-      let todosPreenchidos = true;
-      inputs.forEach((input) => {
-        if (input.value.trim() === "") {
-          todosPreenchidos = false;
-        }
-      });
+  alterarPadrao(event) {
+    let cesta = [];
+    try {
+      cesta = JSON.parse(localStorage.getItem("card-info")) || [];
+    } catch (e) {
+      cesta = [];
+    };
+    const radioVerificar = this.radio[0].checked === true || this.radio[1].checked;
+    const checkboxVerificar = this.checkbox.checked;
 
-      if (todosPreenchidos && radioVerificar && checkboxVerificar) {
-        event.preventDefault();
-        const spanErro = document.querySelector(".parcelas .erro-parcelas");
-        if (spanErro) {
-          spanErro.remove();
-        }
-        document.body.style.cursor = "wait";
-        setTimeout(() => {
-          window.alert("Sua Compra foi enviada com sucesso!.");
-          window.location.href = "../index.html";
-        }, 2000);
-        cesta = [];
-        localStorage.removeItem("card-info");
-      } else if (todosPreenchidos && checkboxVerificar && !radioVerificar) {
-        event.preventDefault();
-        const spanElemento = document.createElement("span");
-        const parcelas = document.querySelector(".parcelas");
+    let todosPreenchidos = true;
+    this.inputs.forEach((input) => {
+      if (input.value.trim() === "") {
+        todosPreenchidos = false;
+      };
+    });
 
-        spanElemento.classList.add("erro-parcelas");
-        spanElemento.innerText = `Parcela não foi informada!`;
-        parcelas.appendChild(spanElemento);
-      }
-    }
+    if (todosPreenchidos && radioVerificar && checkboxVerificar) {
+      event.preventDefault();
+      const spanErro = document.querySelector(".parcelas .erro-parcelas");
+      if (spanErro) {
+        spanErro.remove();
+      };
+      document.body.style.cursor = "wait";
+      setTimeout(() => {
+        window.alert("Sua Compra foi enviada com sucesso!.");
+        window.location.href = "../index.html";
+      }, 2000);
+      cesta = [];
+      localStorage.removeItem("card-info");
+    } else if (todosPreenchidos && checkboxVerificar && !radioVerificar) {
+      event.preventDefault();
+      const spanElemento = document.createElement("span");
+      const parcelas = document.querySelector(".parcelas");
 
-    button.addEventListener("click", alterarPadrao);
-  }
-}
+      spanElemento.classList.add("erro-parcelas");
+      spanElemento.innerText = `Parcela não foi informada!`;
+      parcelas.appendChild(spanElemento);
+    };
+  };
+
+  init() {
+    if (this.button && this.inputs.length && this.radio.length && this.checkbox) {
+      this.button.addEventListener("click", this.alterarPadrao);
+    };
+    return this;
+  };
+};

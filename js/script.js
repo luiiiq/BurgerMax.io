@@ -9,7 +9,7 @@ import cardapio from "./modules/cardapio.js";
 import carrinho from "./modules/carrinho.js";
 import pagamento from "./modules/pagamento.js";
 import Regexp_Pagamento from "./modules/regexp-pagamento.js";
-import buttonFinalizarCompra from "./modules/button-pagamento.js";
+import ButtonFinalizarCompra from "./modules/button-pagamento.js";
 import menuMobile from "./modules/menu-mobile.js";
 
 const localLoja = new LocalLoja("aside", ".icon-deletar");
@@ -41,5 +41,7 @@ pagamento();
 const regexpPagamento = new Regexp_Pagamento("#email", "#cpf", "#cep", "#nome, #sobrenome, #rua, #bairro, #cidade, #num, #complemento, #num-cartao, #codigo, #vencimento, #nome-cartao, #estado");
 regexpPagamento.init();
 
-buttonFinalizarCompra();
+const botaoCompra = new ButtonFinalizarCompra(".formulario-pagar button", '.formulario-pagar input[type="text"], .formulario-pagar input[type="email"]', ".selecione-container input", '.formulario-pagar input[type="checkbox"]');
+botaoCompra.init();
+
 menuMobile();
