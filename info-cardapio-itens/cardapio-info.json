@@ -39,5 +39,10 @@
         "nome": "Suco de Laranja",
         "preco": "4,90",
         "img": "../img/suco.png"
+    }, {
+        "id": "refrigerante",
+        "nome": "Refrigerante",
+        "preco": "4,90",
+        "img": "../img/soda.png"
     }
 ]

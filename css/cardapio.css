@@ -12,6 +12,7 @@
 
 .carrinho-icone {
     position: fixed;
+    z-index: 200;
     grid-column: 3;
     background: #BB0000;
     padding: 10px 20px;
@@ -93,6 +94,10 @@
 .opcao-item img {
     width: 300px;
     justify-self: center;
+}
+
+img[src="../img/soda.png"]{
+    transform: rotate(-90deg);
 }
 
 .opcao-item p:first-of-type {
