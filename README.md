@@ -1,5 +1,12 @@
 Olá! Meu nome é Luiza e sou uma estudante de programação e tecnologia. Estou em constante aprendizado e explorando diferentes linguagens e frameworks para transformar ideias em projetos reais.<br><br> Meu objetivo é crescer como desenvolvedora, construir aplicações criativas e contribuir para projetos que façam a diferença.<br><br> Adoro aprender coisas novas, enfrentar desafios e colaborar com outros desenvolvedores em projetos dinâmicos.
 
+## Sobre o Projeto
+Projeto de um site para venda de hambúrgueres, com foco em uma experiência dinâmica e visualmente atrativa para o usuário.
+
+## Design no Figma
+
+[![Figma](https://img.shields.io/badge/Figma-BurgerMax-F24E1E?logo=figma&logoColor=white)](https://www.figma.com/design/UtL7oZ3cbeDCdbR4xd3vwX/BurgerMax?node-id=0-1&p=f&t=6gU4yLCYriRnB0M7-0)
+
 
 ## Redes:
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/luiza-benevides)
@@ -44,9 +51,3 @@ Olá! Meu nome é Luiza e sou uma estudante de programação e tecnologia. Estou
   />
 </div>
 
-## 🔥 Sequência de Contribuições
-<div align="center">
-  <img
-    src="https://streak-stats.demolab.com?user=luiiiq&theme=radical"
-  />
-</div>
